@@ -11,9 +11,14 @@ const Header = () => {
   return (
     <div className="flex items-center justify-between mb-8">
       <div className="flex items-center">
-        <h1 className="font-bold text-white mr-6 text-2xl">
-          Marketing KPI Dashboard
-        </h1>
+        <div className="mr-6">
+          <h1 className="font-bold text-white text-2xl">
+            Marketing KPI Dashboard
+          </h1>
+          <p className="text-xs text-gray-400 mt-1">
+            Анализ ключевых показателей эффективности маркетинга
+          </p>
+        </div>
         <Select defaultValue="01.06.2023 - 31.06.2023">
           <SelectTrigger className="w-[200px] bg-[#2A3441] border-gray-600 text-gray-300">
             <SelectValue />
