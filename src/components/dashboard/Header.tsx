@@ -15,7 +15,7 @@ const Header = () => {
           <h1 className="font-bold text-white text-2xl">
             Marketing KPI Dashboard
           </h1>
-          <p className="text-xs text-gray-400 mt-1">
+          <p className="text-gray-400 mt-1 text-sm">
             Анализ ключевых показателей эффективности маркетинга
           </p>
         </div>
