@@ -79,7 +79,31 @@ const Sidebar = () => {
         ))}
       </nav>
 
-      {/* Theme Toggle - REMOVED */}
+      {/* Theme Toggle */}
+      <div className="flex items-center justify-between pt-6 border-t border-slate-300 dark:border-slate-700">
+        <Icon
+          name="Sun"
+          size={18}
+          className={`text-slate-400 dark:text-gray-400 ${theme === "light" ? "text-yellow-500" : ""}`}
+        />
+        <div className="flex items-center">
+          <button
+            onClick={toggleTheme}
+            className="w-12 h-6 bg-cyan-500 dark:bg-slate-600 rounded-full relative cursor-pointer transition-colors duration-200"
+          >
+            <div
+              className={`w-5 h-5 bg-white rounded-full absolute top-0.5 transition-transform duration-200 ${
+                theme === "dark" ? "translate-x-6" : "translate-x-0.5"
+              }`}
+            ></div>
+          </button>
+        </div>
+        <Icon
+          name="Moon"
+          size={18}
+          className={`text-slate-400 dark:text-gray-400 ${theme === "dark" ? "text-blue-400" : ""}`}
+        />
+      </div>
     </div>
   );
 };
