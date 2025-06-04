@@ -25,14 +25,16 @@ const Sidebar = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="w-64 bg-gradient-to-b from-slate-800 to-slate-900 dark:from-slate-900 dark:to-black h-screen p-6 flex flex-col">
+    <div className="w-64 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 h-screen p-6 flex flex-col border-r border-slate-200 dark:border-slate-700">
       {/* Logo */}
       <div className="mb-8">
-        <h1 className="text-cyan-400 font-bold text-xl tracking-wider">MKD</h1>
+        <h1 className="text-cyan-600 dark:text-cyan-400 font-bold text-xl tracking-wider">
+          MKD
+        </h1>
       </div>
 
       {/* User Profile */}
-      <div className="flex items-center mb-8 p-3 rounded-lg bg-slate-700/50">
+      <div className="flex items-center mb-8 p-3 rounded-lg bg-slate-200/60 dark:bg-slate-700/50">
         <div className="w-10 h-10 rounded-full bg-gray-400 mr-3 overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
@@ -41,7 +43,9 @@ const Sidebar = () => {
           />
         </div>
         <div>
-          <p className="text-white font-medium text-sm">Mr. Human</p>
+          <p className="text-slate-800 dark:text-white font-medium text-sm">
+            Mr. Human
+          </p>
         </div>
       </div>
 
@@ -53,7 +57,7 @@ const Sidebar = () => {
             className={`w-full flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg transition-all duration-200 ${
               item.active
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-600/25"
-                : "text-gray-300 hover:text-white hover:bg-slate-700/50"
+                : "text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-700/50"
             }`}
           >
             <div className="flex items-center">
@@ -76,11 +80,11 @@ const Sidebar = () => {
       </nav>
 
       {/* Theme Toggle */}
-      <div className="flex items-center justify-between pt-6 border-t border-slate-700 dark:border-slate-600">
+      <div className="flex items-center justify-between pt-6 border-t border-slate-300 dark:border-slate-700">
         <Icon
           name="Sun"
           size={18}
-          className={`text-gray-400 ${theme === "light" ? "text-yellow-500" : ""}`}
+          className={`text-slate-400 dark:text-gray-400 ${theme === "light" ? "text-yellow-500" : ""}`}
         />
         <div className="flex items-center">
           <button
@@ -97,7 +101,7 @@ const Sidebar = () => {
         <Icon
           name="Moon"
           size={18}
-          className={`text-gray-400 ${theme === "dark" ? "text-blue-400" : ""}`}
+          className={`text-slate-400 dark:text-gray-400 ${theme === "dark" ? "text-blue-400" : ""}`}
         />
       </div>
     </div>
