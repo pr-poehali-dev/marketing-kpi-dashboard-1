@@ -1,4 +1,5 @@
 import Icon from "@/components/ui/icon";
+import { useTheme } from "@/hooks/use-theme";
 
 interface NavItem {
   name: string;
@@ -21,8 +22,10 @@ const navItems: NavItem[] = [
 ];
 
 const Sidebar = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <div className="w-64 bg-gradient-to-b from-slate-800 to-slate-900 h-screen p-6 flex flex-col">
+    <div className="w-64 bg-gradient-to-b from-slate-800 to-slate-900 dark:from-slate-900 dark:to-black h-screen p-6 flex flex-col">
       {/* Logo */}
       <div className="mb-8">
         <h1 className="text-cyan-400 font-bold text-xl tracking-wider">MKD</h1>
@@ -73,14 +76,29 @@ const Sidebar = () => {
       </nav>
 
       {/* Theme Toggle */}
-      <div className="flex items-center justify-between pt-6 border-t border-slate-700">
-        <Icon name="Sun" size={18} className="text-gray-400" />
+      <div className="flex items-center justify-between pt-6 border-t border-slate-700 dark:border-slate-600">
+        <Icon
+          name="Sun"
+          size={18}
+          className={`text-gray-400 ${theme === "light" ? "text-yellow-500" : ""}`}
+        />
         <div className="flex items-center">
-          <div className="w-12 h-6 bg-cyan-500 rounded-full relative cursor-pointer">
-            <div className="w-5 h-5 bg-white rounded-full absolute top-0.5 right-0.5 transition-transform duration-200"></div>
-          </div>
+          <button
+            onClick={toggleTheme}
+            className="w-12 h-6 bg-cyan-500 dark:bg-slate-600 rounded-full relative cursor-pointer transition-colors duration-200"
+          >
+            <div
+              className={`w-5 h-5 bg-white rounded-full absolute top-0.5 transition-transform duration-200 ${
+                theme === "dark" ? "translate-x-6" : "translate-x-0.5"
+              }`}
+            ></div>
+          </button>
         </div>
-        <Icon name="Moon" size={18} className="text-gray-400" />
+        <Icon
+          name="Moon"
+          size={18}
+          className={`text-gray-400 ${theme === "dark" ? "text-blue-400" : ""}`}
+        />
       </div>
     </div>
   );
