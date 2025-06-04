@@ -1,115 +1,97 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
 
-interface Order {
-  id: string;
-  customer: string;
-  location: string;
-  date: string;
-  status: "Delivered" | "Processing" | "Pending";
-  amount: string;
-}
-
-const orders: Order[] = [
-  {
-    id: "#234",
-    customer: "Emma",
-    location: "London",
-    date: "22.06.2022",
-    status: "Delivered",
-    amount: "$120",
-  },
-  {
-    id: "#235",
-    customer: "John Doe",
-    location: "USA",
-    date: "21.06.2022",
-    status: "Processing",
-    amount: "$85",
-  },
-  {
-    id: "#236",
-    customer: "Sarah",
-    location: "Canada",
-    date: "20.06.2022",
-    status: "Pending",
-    amount: "$95",
-  },
-  {
-    id: "#237",
-    customer: "Robert",
-    location: "New York",
-    date: "19.06.2022",
-    status: "Delivered",
-    amount: "$140",
-  },
-];
-
-const getStatusColor = (status: string) => {
-  switch (status) {
-    case "Delivered":
-      return "bg-green-500";
-    case "Processing":
-      return "bg-yellow-500";
-    case "Pending":
-      return "bg-red-500";
-    default:
-      return "bg-gray-500";
-  }
-};
-
 const OrdersTable = () => {
+  const orders = [
+    {
+      id: "#12548796",
+      customer: "Wade Warren",
+      status: "Delivered",
+      date: "15 Dec 2021",
+      amount: "$124.97",
+      statusColor: "green",
+    },
+    {
+      id: "#12548797",
+      customer: "Jane Cooper",
+      status: "Cancelled",
+      date: "14 Dec 2021",
+      amount: "$365.02",
+      statusColor: "red",
+    },
+    {
+      id: "#12548798",
+      customer: "Guy Hawkins",
+      status: "Refunded",
+      date: "13 Dec 2021",
+      amount: "$45.88",
+      statusColor: "orange",
+    },
+    {
+      id: "#12548799",
+      customer: "Kristin Watson",
+      status: "Delivered",
+      date: "12 Dec 2021",
+      amount: "$65.00",
+      statusColor: "green",
+    },
+  ];
+
   return (
-    <Card className="bg-[#2A3441] border-gray-700">
-      <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle className="text-lg font-semibold text-white">
-          Customer order
-        </CardTitle>
-        <Icon name="MoreHorizontal" size={20} className="text-gray-400" />
-      </CardHeader>
-      <CardContent>
-        <div className="space-y-3">
-          {orders.map((order, index) => (
-            <div
-              key={index}
-              className={`flex items-center justify-between p-3 rounded-lg ${getStatusColor(order.status)} bg-opacity-10 border border-opacity-20`}
-              style={{
-                borderColor: getStatusColor(order.status).replace("bg-", ""),
-              }}
-            >
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
-                  <Icon name="User" size={14} className="text-gray-300" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-white">
-                    {order.customer}
-                  </p>
-                  <p className="text-xs text-gray-400">{order.location}</p>
-                </div>
+    <Card className="bg-white dark:bg-[#2A3441] border-gray-200 dark:border-gray-700 p-6 transition-colors duration-200">
+      <div className="flex items-center justify-between mb-6">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+          Recent Orders
+        </h3>
+        <button className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">
+          View All
+        </button>
+      </div>
+      <div className="space-y-4">
+        {orders.map((order) => (
+          <div
+            key={order.id}
+            className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg border border-gray-200 dark:border-gray-600"
+          >
+            <div className="flex items-center">
+              <div className="w-10 h-10 bg-gray-200 dark:bg-gray-600 rounded-full flex items-center justify-center mr-3">
+                <Icon
+                  name="Package"
+                  size={16}
+                  className="text-gray-600 dark:text-gray-300"
+                />
               </div>
-
-              <div className="text-center">
-                <p className="text-sm text-white">{order.date}</p>
-                <p className="text-xs text-gray-400">Date</p>
+              <div>
+                <p className="font-medium text-gray-900 dark:text-white">
+                  {order.customer}
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  {order.id}
+                </p>
               </div>
-
-              <div className="text-center">
+            </div>
+            <div className="text-right">
+              <p className="font-medium text-gray-900 dark:text-white">
+                {order.amount}
+              </p>
+              <div className="flex items-center">
                 <span
-                  className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(order.status)} text-white`}
-                >
+                  className={`inline-block w-2 h-2 rounded-full mr-2 ${
+                    order.statusColor === "green"
+                      ? "bg-green-500"
+                      : order.statusColor === "red"
+                        ? "bg-red-500"
+                        : "bg-orange-500"
+                  }`}
+                ></span>
+                <span className="text-sm text-gray-500 dark:text-gray-400">
                   {order.status}
                 </span>
               </div>
-
-              <div className="text-right">
-                <p className="text-sm font-medium text-white">{order.amount}</p>
-                <p className="text-xs text-gray-400">Price</p>
-              </div>
             </div>
-          ))}
-        </div>
-      </CardContent>
+          </div>
+        ))}
+      </div>
     </Card>
   );
 };

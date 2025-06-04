@@ -48,7 +48,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="flex min-h-screen bg-[#1A1F2C]">
+    <div className="flex min-h-screen bg-gray-50 dark:bg-[#1A1F2C] transition-colors duration-200">
       <Sidebar />
 
       <div className="flex-1 p-8">
@@ -104,32 +104,52 @@ const Index = () => {
           />
 
           {/* Financial Summary Cards */}
-          <Card className="bg-[#2A3441] border-gray-700 p-6">
+          <Card className="bg-white dark:bg-[#2A3441] border-gray-200 dark:border-gray-700 p-6 transition-colors duration-200">
             <div className="flex items-center justify-between mb-4">
-              <div className="p-2 bg-gray-700 rounded-lg">
-                <Icon name="Receipt" size={20} className="text-gray-300" />
+              <div className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg">
+                <Icon
+                  name="Receipt"
+                  size={20}
+                  className="text-gray-600 dark:text-gray-300"
+                />
               </div>
               <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
                 <Icon name="FileText" size={20} className="text-white" />
               </div>
             </div>
-            <p className="text-sm text-gray-400 mb-1">Paid Invoices</p>
-            <p className="text-2xl font-bold text-white">$30256.23</p>
-            <p className="text-xs text-gray-500">Current Financial Year</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+              Paid Invoices
+            </p>
+            <p className="text-2xl font-bold text-gray-900 dark:text-white">
+              $30256.23
+            </p>
+            <p className="text-xs text-gray-400 dark:text-gray-500">
+              Current Financial Year
+            </p>
           </Card>
 
-          <Card className="bg-[#2A3441] border-gray-700 p-6">
+          <Card className="bg-white dark:bg-[#2A3441] border-gray-200 dark:border-gray-700 p-6 transition-colors duration-200">
             <div className="flex items-center justify-between mb-4">
-              <div className="p-2 bg-gray-700 rounded-lg">
-                <Icon name="Wallet" size={20} className="text-gray-300" />
+              <div className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg">
+                <Icon
+                  name="Wallet"
+                  size={20}
+                  className="text-gray-600 dark:text-gray-300"
+                />
               </div>
               <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
                 <Icon name="DollarSign" size={20} className="text-white" />
               </div>
             </div>
-            <p className="text-sm text-gray-400 mb-1">Funds received</p>
-            <p className="text-2xl font-bold text-white">$150256.23</p>
-            <p className="text-xs text-gray-500">Current Financial Year</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+              Funds received
+            </p>
+            <p className="text-2xl font-bold text-gray-900 dark:text-white">
+              $150256.23
+            </p>
+            <p className="text-xs text-gray-400 dark:text-gray-500">
+              Current Financial Year
+            </p>
           </Card>
         </div>
 

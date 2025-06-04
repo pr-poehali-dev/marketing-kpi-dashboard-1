@@ -9,21 +9,21 @@ import {
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-between mb-8">
+    <div className="flex items-center justify-between mb-8 transition-colors duration-200">
       <div className="flex items-center">
         <div className="mr-6">
-          <h1 className="font-bold text-white text-2xl">
+          <h1 className="font-bold text-gray-900 dark:text-white text-2xl">
             Marketing KPI Dashboard
           </h1>
-          <p className="text-gray-400 mt-1 text-sm">
+          <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm">
             Анализ ключевых показателей эффективности маркетинга
           </p>
         </div>
         <Select defaultValue="01.06.2023 - 31.06.2023">
-          <SelectTrigger className="w-[200px] bg-[#2A3441] border-gray-600 text-gray-300">
+          <SelectTrigger className="w-[200px] bg-white dark:bg-[#2A3441] border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-300">
             <SelectValue />
           </SelectTrigger>
-          <SelectContent className="bg-[#2A3441] border-gray-600">
+          <SelectContent className="bg-white dark:bg-[#2A3441] border-gray-300 dark:border-gray-600">
             <SelectItem value="01.06.2023 - 31.06.2023">
               01.06.2023 - 31.06.2023
             </SelectItem>
@@ -35,18 +35,30 @@ const Header = () => {
             </SelectItem>
           </SelectContent>
         </Select>
-        <Icon name="Calendar" size={18} className="ml-2 text-gray-400" />
+        <Icon
+          name="Calendar"
+          size={18}
+          className="ml-2 text-gray-500 dark:text-gray-400"
+        />
       </div>
 
       <div className="flex items-center space-x-4">
         <div className="flex items-center">
-          <Icon name="Moon" size={18} className="text-gray-400 mr-2" />
+          <Icon
+            name="Moon"
+            size={18}
+            className="text-gray-500 dark:text-gray-400 mr-2"
+          />
           <div className="w-10 h-6 bg-blue-500 rounded-full relative">
             <div className="w-4 h-4 bg-white rounded-full absolute top-1 right-1 transition-transform"></div>
           </div>
         </div>
-        <div className="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center">
-          <Icon name="User" size={16} className="text-gray-300" />
+        <div className="w-8 h-8 rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
+          <Icon
+            name="User"
+            size={16}
+            className="text-gray-700 dark:text-gray-300"
+          />
         </div>
       </div>
     </div>

@@ -7,7 +7,6 @@ interface MetricCardProps {
   change: string;
   changeType: "positive" | "negative";
   icon: string;
-  period?: string;
 }
 
 const MetricCard = ({
@@ -16,33 +15,31 @@ const MetricCard = ({
   change,
   changeType,
   icon,
-  period,
 }: MetricCardProps) => {
   return (
-    <Card className="bg-[#2A3441] border-gray-700 p-6 hover:bg-[#2F3A48] transition-colors">
-      <div className="flex items-start justify-between mb-4">
-        <div className="p-2 bg-gray-700 rounded-lg">
-          <Icon name={icon} size={20} className="text-gray-300" />
+    <Card className="bg-white dark:bg-[#2A3441] border-gray-200 dark:border-gray-700 p-6 transition-colors duration-200">
+      <div className="flex items-center justify-between mb-4">
+        <div className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg">
+          <Icon
+            name={icon}
+            size={20}
+            className="text-gray-600 dark:text-gray-300"
+          />
         </div>
-        {period && <span className="text-xs text-gray-500">{period}</span>}
-      </div>
-
-      <div className="space-y-1">
-        <p className="text-sm text-gray-400">{title}</p>
-        <p className="text-2xl font-bold text-white">{value}</p>
-        <p
-          className={`text-sm flex items-center ${
-            changeType === "positive" ? "text-green-400" : "text-red-400"
+        <span
+          className={`text-sm font-medium ${
+            changeType === "positive"
+              ? "text-green-600 dark:text-green-400"
+              : "text-red-600 dark:text-red-400"
           }`}
         >
-          <Icon
-            name={changeType === "positive" ? "TrendingUp" : "TrendingDown"}
-            size={14}
-            className="mr-1"
-          />
-          {change} за последний месяц
-        </p>
+          {change}
+        </span>
       </div>
+      <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">{title}</p>
+      <p className="text-2xl font-bold text-gray-900 dark:text-white">
+        {value}
+      </p>
     </Card>
   );
 };
