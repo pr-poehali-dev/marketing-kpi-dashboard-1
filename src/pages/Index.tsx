@@ -121,7 +121,7 @@ const Index = () => {
               Оплаченные счета
             </p>
             <p className="text-2xl font-bold text-gray-900 dark:text-white">
-              $30256.23
+              30256.23₽
             </p>
             <p className="text-xs text-gray-400 dark:text-gray-500">
               Текущий финансовый год
@@ -145,7 +145,7 @@ const Index = () => {
               Полученные средства
             </p>
             <p className="text-2xl font-bold text-gray-900 dark:text-white">
-              $150256.23
+              150257.23₽
             </p>
             <p className="text-xs text-gray-400 dark:text-gray-500">
               Текущий финансовый год
