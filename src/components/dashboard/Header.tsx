@@ -41,26 +41,6 @@ const Header = () => {
           className="ml-2 text-gray-500 dark:text-gray-400"
         />
       </div>
-
-      <div className="flex items-center space-x-4">
-        <div className="flex items-center">
-          <Icon
-            name="Moon"
-            size={18}
-            className="text-gray-500 dark:text-gray-400 mr-2"
-          />
-          <div className="w-10 h-6 bg-blue-500 rounded-full relative">
-            <div className="w-4 h-4 bg-white rounded-full absolute top-1 right-1 transition-transform"></div>
-          </div>
-        </div>
-        <div className="w-8 h-8 rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
-          <Icon
-            name="User"
-            size={16}
-            className="text-gray-700 dark:text-gray-300"
-          />
-        </div>
-      </div>
     </div>
   );
 };
