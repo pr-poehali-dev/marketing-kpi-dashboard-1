@@ -23,14 +23,14 @@ const yearOptions = [
 
 const ChartCard = ({ title, children, showYearSelector }: ChartCardProps) => {
   return (
-    <Card className="bg-white dark:bg-[#2A3441] border-gray-200 dark:border-gray-700 p-6 transition-colors duration-200">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+    <Card className="bg-white dark:bg-[#2A3441] border-gray-200 dark:border-gray-700 p-4 md:p-6 transition-colors duration-200">
+      <div className="flex items-center justify-between mb-4 md:mb-6">
+        <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white">
           {title}
         </h3>
         {showYearSelector && (
           <Select defaultValue="2023">
-            <SelectTrigger className="w-[80px] bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-900 dark:text-gray-300">
+            <SelectTrigger className="w-[70px] md:w-[80px] bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-900 dark:text-gray-300 text-xs md:text-sm">
               <SelectValue />
             </SelectTrigger>
             <SelectContent className="bg-white dark:bg-[#2A3441] border-gray-200 dark:border-gray-600">
