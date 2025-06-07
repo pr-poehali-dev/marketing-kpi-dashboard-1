@@ -27,15 +27,13 @@ const Sidebar = () => {
   return (
     <div className="w-64 bg-gradient-to-b from-zinc-50/80 via-white to-zinc-50/50 dark:from-zinc-900/90 dark:via-zinc-800/95 dark:to-zinc-900/80 h-screen p-6 flex flex-col border-r border-zinc-200/80 dark:border-zinc-700/50 backdrop-blur-xl shadow-xl shadow-zinc-900/5 dark:shadow-black/20">
       {/* Logo */}
-      <div className="mb-10">
+      <div className="mb-10 px-0">
         <div className="flex items-center space-x-3">
           <h1 className="text-zinc-800 dark:text-zinc-100 font-bold text-xl tracking-tight">
             MKD
           </h1>
         </div>
-        <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-2 font-medium">
-          Marketing Studio
-        </p>
+        <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-2 font-medium"></p>
       </div>
 
       {/* User Profile */}
