@@ -23,39 +23,61 @@ const PieChart = ({ data }: PieChartProps) => {
     return `M 50,50 L ${x1},${y1} A 40,40 0 ${largeArcFlag},1 ${x2},${y2} Z`;
   };
 
+  const getLabelPosition = (percentage: number, startAngle: number) => {
+    const angle = (percentage / 100) * 360;
+    const midAngle = startAngle + angle / 2;
+    const radius = 32;
+    const x = 50 + radius * Math.cos((midAngle * Math.PI) / 180);
+    const y = 50 + radius * Math.sin((midAngle * Math.PI) / 180);
+    return { x, y };
+  };
+
   return (
-    <div className="flex items-center justify-between">
-      <div className="relative">
-        <svg width="120" height="120" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="20" fill="#1A1F2C" />
+    <div className="flex flex-col items-center">
+      <div className="relative mb-6">
+        <svg width="200" height="200" viewBox="0 0 100 100">
           {data.map((item, index) => {
             const percentage = (item.value / total) * 100;
             const startAngle = (cumulativePercentage / 100) * 360 - 90;
             const path = createPath(percentage, startAngle);
+            const labelPos = getLabelPosition(percentage, startAngle);
+
             cumulativePercentage += percentage;
 
             return (
-              <path
-                key={index}
-                d={path}
-                fill={item.color}
-                className="transition-all duration-300 hover:opacity-80"
-              />
+              <g key={index}>
+                <path
+                  d={path}
+                  fill={item.color}
+                  className="transition-all duration-300 hover:opacity-80"
+                />
+                {percentage > 8 && (
+                  <text
+                    x={labelPos.x}
+                    y={labelPos.y}
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    className="fill-white text-xs font-medium"
+                    style={{ fontSize: "3px" }}
+                  >
+                    {percentage.toFixed(0)}%
+                  </text>
+                )}
+              </g>
             );
           })}
         </svg>
       </div>
 
-      <div className="space-y-2">
+      <div className="flex flex-wrap gap-4 justify-center">
         {data.map((item, index) => (
           <div key={index} className="flex items-center space-x-2">
             <div
               className="w-3 h-3 rounded-full"
               style={{ backgroundColor: item.color }}
             />
-            <span className="text-sm text-gray-400">{item.name}</span>
-            <span className="text-sm text-white font-medium">
-              {((item.value / total) * 100).toFixed(1)}%
+            <span className="text-sm text-gray-600 dark:text-gray-300">
+              {item.name}
             </span>
           </div>
         ))}
