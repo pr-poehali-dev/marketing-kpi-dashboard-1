@@ -145,30 +145,6 @@ const Index = () => {
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
             Трафик и источники
           </h2>
-
-        {/* Эффективность и конверсии */}
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-            Эффективность и конверсии
-          </h2>
-          <div className="grid grid-cols-1 gap-6">
-            <MetricCard
-              title="Среднее время на странице"
-              value="2м 15с"
-              change="+8.4%"
-              changeType="positive"
-              icon="Clock"
-              target="2м 30с"
-              period="vs план"
-            />
-          </div>
-        </div>
-
-        {/* Трафик */}
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-            Трафик и источники
-          </h2>
           <div className="grid grid-cols-3 gap-6">
             <MetricCard
               title="Общее число визитов"
@@ -195,6 +171,24 @@ const Index = () => {
               changeType="positive"
               icon="UserPlus"
               target="5,100"
+              period="vs план"
+            />
+          </div>
+        </div>
+
+        {/* Эффективность и конверсии */}
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            Эффективность и конверсии
+          </h2>
+          <div className="grid grid-cols-1 gap-6">
+            <MetricCard
+              title="Среднее время на странице"
+              value="2м 15с"
+              change="+8.4%"
+              changeType="positive"
+              icon="Clock"
+              target="2м 30с"
               period="vs план"
             />
           </div>
