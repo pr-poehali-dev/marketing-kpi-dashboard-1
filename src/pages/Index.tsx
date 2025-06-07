@@ -19,21 +19,21 @@ const Index = () => {
   ];
 
   const conversionData = [
-    { month: "Jan", leads: 850, conversions: 127 },
-    { month: "Feb", leads: 920, conversions: 145 },
-    { month: "Mar", leads: 1100, conversions: 176 },
-    { month: "Apr", leads: 980, conversions: 152 },
-    { month: "May", leads: 1250, conversions: 200 },
-    { month: "Jun", leads: 1400, conversions: 238 },
+    { month: "Ян", leads: 850, conversions: 127 },
+    { month: "Фев", leads: 920, conversions: 145 },
+    { month: "Мар", leads: 1100, conversions: 176 },
+    { month: "Апр", leads: 980, conversions: 152 },
+    { month: "Май", leads: 1250, conversions: 200 },
+    { month: "Июн", leads: 1400, conversions: 238 },
   ];
 
   const revenueData = [
-    { month: "Jan", revenue: 284000, target: 300000 },
-    { month: "Feb", revenue: 325000, target: 320000 },
-    { month: "Mar", revenue: 378000, target: 350000 },
-    { month: "Apr", revenue: 342000, target: 360000 },
-    { month: "May", revenue: 425000, target: 400000 },
-    { month: "Jun", revenue: 487000, target: 450000 },
+    { month: "Ян", revenue: 284000, target: 300000 },
+    { month: "Фев", revenue: 325000, target: 320000 },
+    { month: "Мар", revenue: 378000, target: 350000 },
+    { month: "Апр", revenue: 342000, target: 360000 },
+    { month: "Май", revenue: 425000, target: 400000 },
+    { month: "Июн", revenue: 487000, target: 450000 },
   ];
 
   const funnelData = [
