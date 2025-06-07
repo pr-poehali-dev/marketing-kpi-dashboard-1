@@ -170,12 +170,10 @@ const Index = () => {
         </div>
 
         {/* Bottom Row */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6">
           <ChartCard title="Общая активность пользователей" showYearSelector>
             <LineChart data={userActivityData} color="#9b87f5" />
           </ChartCard>
-
-          <OrdersTable />
         </div>
       </div>
     </div>
