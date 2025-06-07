@@ -35,14 +35,16 @@ const MobileHeader = ({ onMenuToggle }: MobileHeaderProps) => {
         </div>
       </div>
       <div className="flex items-center">
-        <Select defaultValue="01.06.2023 - 31.06.2023">
+        <Select defaultValue="01.01.2023 - 31.12.2023">
           <SelectTrigger className="w-[140px] md:w-[200px] bg-white dark:bg-[#2A3441] border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-300 text-xs md:text-sm">
             <SelectValue />
           </SelectTrigger>
           <SelectContent className="bg-white dark:bg-[#2A3441] border-gray-300 dark:border-gray-600">
-            <SelectItem value="01.06.2023 - 31.06.2023">Июнь 2023</SelectItem>
-            <SelectItem value="01.05.2023 - 31.05.2023">Май 2023</SelectItem>
-            <SelectItem value="01.04.2023 - 30.04.2023">Апр 2023</SelectItem>
+            <SelectItem value="01.01.2025 - 31.12.2025">2025</SelectItem>
+            <SelectItem value="01.01.2024 - 31.12.2024">2024</SelectItem>
+            <SelectItem value="01.01.2023 - 31.12.2023">2023</SelectItem>
+            <SelectItem value="01.01.2022 - 31.12.2022">2022</SelectItem>
+            <SelectItem value="01.01.2021 - 31.12.2021">2021</SelectItem>
           </SelectContent>
         </Select>
         <Icon
