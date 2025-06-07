@@ -140,6 +140,12 @@ const Index = () => {
           </div>
         </div>
 
+        {/* Трафик */}
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            Трафик и источники
+          </h2>
+
         {/* Эффективность и конверсии */}
         <div className="mb-6">
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
