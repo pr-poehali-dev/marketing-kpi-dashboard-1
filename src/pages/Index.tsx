@@ -1,7 +1,9 @@
 import Sidebar from "@/components/dashboard/Sidebar";
 import MobileSidebar from "@/components/dashboard/MobileSidebar";
+import TabletSidebar from "@/components/dashboard/TabletSidebar";
 import Header from "@/components/dashboard/Header";
 import MobileHeader from "@/components/dashboard/MobileHeader";
+import TabletHeader from "@/components/dashboard/TabletHeader";
 import MetricCard from "@/components/dashboard/MetricCard";
 import ChartCard from "@/components/dashboard/ChartCard";
 import PieChart from "@/components/dashboard/PieChart";
@@ -10,6 +12,7 @@ import LineChart from "@/components/dashboard/LineChart";
 import ConversionFunnel from "@/components/dashboard/ConversionFunnel";
 import Icon from "@/components/ui/icon";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useIsTablet } from "@/hooks/use-tablet";
 import { useState } from "react";
 
 const Index = () => {
@@ -48,29 +51,37 @@ const Index = () => {
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isTabletMenuOpen, setIsTabletMenuOpen] = useState(false);
   const isMobile = useIsMobile();
+  const isTablet = useIsTablet();
 
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-zinc-50 via-white to-zinc-100/50 dark:from-zinc-900 dark:via-zinc-800/90 dark:to-zinc-900/95 transition-colors duration-200">
-      {!isMobile && <Sidebar />}
+      {!isMobile && !isTablet && <Sidebar />}
       <MobileSidebar
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
       />
+      <TabletSidebar
+        isOpen={isTabletMenuOpen}
+        onClose={() => setIsTabletMenuOpen(false)}
+      />
 
-      <div className="flex-1 p-6 lg:p-8 bg-white/30 dark:bg-zinc-800/20 backdrop-blur-sm">
+      <div className="flex-1 p-4 lg:p-6 xl:p-8 bg-white/30 dark:bg-zinc-800/20 backdrop-blur-sm">
         {isMobile ? (
           <MobileHeader onMenuToggle={() => setIsMobileMenuOpen(true)} />
+        ) : isTablet ? (
+          <TabletHeader onMenuToggle={() => setIsTabletMenuOpen(true)} />
         ) : (
           <Header />
         )}
 
         {/* Продажи и финансы */}
-        <div className="mb-4 md:mb-6">
+        <div className="mb-4 md:mb-5 lg:mb-6">
           <h2 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
             Продажи и финансы
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
             <MetricCard
               title="Общий объем продаж"
               value="2.1M"
@@ -111,11 +122,11 @@ const Index = () => {
         </div>
 
         {/* Лиды и конверсии */}
-        <div className="mb-4 md:mb-6">
+        <div className="mb-4 md:mb-5 lg:mb-6">
           <h2 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
             Лиды и конверсии
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
             <MetricCard
               title="Общее количество лидов"
               value="1,400"
