@@ -11,10 +11,10 @@ import Icon from "@/components/ui/icon";
 const Index = () => {
   // Mock data for marketing metrics
   const channelTrafficData = [
-    { name: "Organic", value: 4500, color: "#10B981" },
-    { name: "Paid", value: 2800, color: "#3B82F6" },
-    { name: "Social", value: 1900, color: "#8B5CF6" },
-    { name: "Direct", value: 1200, color: "#F59E0B" },
+    { name: "Органический", value: 4500, color: "#10B981" },
+    { name: "Платный", value: 2800, color: "#3B82F6" },
+    { name: "Социальные сети", value: 1900, color: "#8B5CF6" },
+    { name: "Прямой", value: 1200, color: "#F59E0B" },
     { name: "Email", value: 800, color: "#EF4444" },
   ];
 
