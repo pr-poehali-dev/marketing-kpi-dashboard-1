@@ -10,7 +10,6 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { name: "Дашборд", icon: "LayoutDashboard", active: true },
-  { name: "Календарь", icon: "Calendar" },
   { name: "Трафик", icon: "TrendingUp" },
   { name: "Визуализация", icon: "Eye" },
   { name: "Графики", icon: "BarChart3" },
