@@ -16,7 +16,7 @@ interface ChartCardProps {
 const ChartCard = ({ title, children, showYearSelector }: ChartCardProps) => {
   return (
     <Card className="bg-white dark:bg-[#2A3441] border-gray-200 dark:border-gray-700 p-6 transition-colors duration-200">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
           {title}
         </h3>
@@ -33,7 +33,7 @@ const ChartCard = ({ title, children, showYearSelector }: ChartCardProps) => {
           </Select>
         )}
       </div>
-      {children}
+      <div className="pt-2">{children}</div>
     </Card>
   );
 };
