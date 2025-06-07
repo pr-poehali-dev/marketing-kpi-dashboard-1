@@ -91,7 +91,7 @@ const Sidebar = () => {
 
       {/* Theme Toggle */}
       <div className="flex items-center justify-between pt-6 border-t border-zinc-200/60 dark:border-zinc-700/50">
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 my-0 rounded-none px-[41px]">
           <Icon
             name="Sun"
             size={18}
