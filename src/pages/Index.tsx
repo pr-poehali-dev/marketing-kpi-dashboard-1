@@ -192,7 +192,7 @@ const Index = () => {
         </div>
 
         {/* Эффективность и конверсии */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6">
           <ChartCard title="Динамика лидов и конверсий" showYearSelector>
             <LineChart
               data={conversionData.map((item) => ({
