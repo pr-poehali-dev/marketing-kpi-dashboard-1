@@ -225,6 +225,19 @@ const Index = () => {
               period="vs план"
             />
           </div>
+        {/* Графики и аналитика */}
+        <div className="grid grid-cols-3 gap-6 mb-8">
+          <ChartCard title="Выручка vs План" showYearSelector>
+            <BarChart data={revenueData} />
+          </ChartCard>
+
+          <ChartCard title="Источники трафика">
+            <PieChart data={channelTrafficData} />
+          </ChartCard>
+
+          <ChartCard title="Воронка конверсий">
+            <ConversionFunnel data={funnelData} />
+          </ChartCard>
         </div>
       </div>
     </div>
