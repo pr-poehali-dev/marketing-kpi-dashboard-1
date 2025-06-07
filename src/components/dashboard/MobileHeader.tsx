@@ -36,8 +36,12 @@ const MobileHeader = ({ onMenuToggle }: MobileHeaderProps) => {
       </div>
       <div className="flex items-center space-x-2">
         <Select defaultValue="01.06.2025 - 31.06.2025">
-          <SelectTrigger className="w-[140px] md:w-[200px] bg-white/80 dark:bg-zinc-800/80 border border-zinc-300/60 dark:border-zinc-600/50 text-zinc-800 dark:text-zinc-200 text-xs md:text-sm rounded-xl shadow-sm backdrop-blur-sm">
-            <SelectValue />
+          <SelectTrigger className="w-auto p-2 bg-white/80 dark:bg-zinc-800/80 border border-zinc-300/60 dark:border-zinc-600/50 rounded-xl shadow-sm backdrop-blur-sm hover:shadow-md transition-all duration-200">
+            <Icon
+              name="Calendar"
+              size={18}
+              className="text-zinc-600 dark:text-zinc-400"
+            />
           </SelectTrigger>
           <SelectContent className="bg-white/95 dark:bg-zinc-800/95 border border-zinc-300/60 dark:border-zinc-600/50 rounded-xl backdrop-blur-xl shadow-xl">
             <SelectItem value="01.06.2025 - 31.06.2025">Июнь 2025</SelectItem>
@@ -45,13 +49,6 @@ const MobileHeader = ({ onMenuToggle }: MobileHeaderProps) => {
             <SelectItem value="01.06.2023 - 31.06.2023">Июнь 2023</SelectItem>
           </SelectContent>
         </Select>
-        <div className="p-2 bg-zinc-100/80 dark:bg-zinc-700/50 rounded-xl border border-zinc-200/60 dark:border-zinc-600/50 shadow-sm hidden sm:block">
-          <Icon
-            name="Calendar"
-            size={16}
-            className="text-zinc-600 dark:text-zinc-400"
-          />
-        </div>
       </div>
     </div>
   );
