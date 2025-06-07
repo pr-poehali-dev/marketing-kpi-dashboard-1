@@ -44,7 +44,7 @@ const Sidebar = () => {
         </div>
         <div>
           <p className="text-slate-800 dark:text-white font-medium text-sm">
-            Mr. Human
+            Пользователь
           </p>
         </div>
       </div>

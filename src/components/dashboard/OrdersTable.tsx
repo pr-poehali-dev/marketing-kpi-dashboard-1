@@ -5,34 +5,34 @@ const OrdersTable = () => {
   const orders = [
     {
       id: "#12548796",
-      customer: "Wade Warren",
-      status: "Delivered",
-      date: "15 Dec 2021",
-      amount: "$124.97",
+      customer: "Иван Иванов",
+      status: "Доставлен",
+      date: "15 декабря 2021",
+      amount: "₽12,497",
       statusColor: "green",
     },
     {
       id: "#12548797",
-      customer: "Jane Cooper",
-      status: "Cancelled",
-      date: "14 Dec 2021",
-      amount: "$365.02",
+      customer: "Анна Петрова",
+      status: "Отменен",
+      date: "14 декабря 2021",
+      amount: "₽36,502",
       statusColor: "red",
     },
     {
       id: "#12548798",
-      customer: "Guy Hawkins",
-      status: "Refunded",
-      date: "13 Dec 2021",
-      amount: "$45.88",
+      customer: "Алексей Сидоров",
+      status: "Возврат",
+      date: "13 декабря 2021",
+      amount: "₽4,588",
       statusColor: "orange",
     },
     {
       id: "#12548799",
-      customer: "Kristin Watson",
-      status: "Delivered",
-      date: "12 Dec 2021",
-      amount: "$65.00",
+      customer: "Мария Козлова",
+      status: "Доставлен",
+      date: "12 декабря 2021",
+      amount: "₽6,500",
       statusColor: "green",
     },
   ];
@@ -41,10 +41,10 @@ const OrdersTable = () => {
     <Card className="bg-white dark:bg-[#2A3441] border-gray-200 dark:border-gray-700 p-6 transition-colors duration-200">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-          Recent Orders
+          Недавние заказы
         </h3>
         <button className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">
-          View All
+          Показать все
         </button>
       </div>
       <div className="space-y-4">

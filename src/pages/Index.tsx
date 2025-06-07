@@ -57,28 +57,28 @@ const Index = () => {
         {/* Metrics Row */}
         <div className="grid grid-cols-4 gap-6 mb-8">
           <MetricCard
-            title="Orders"
+            title="Заказы"
             value="201"
             change="+2.5%"
             changeType="positive"
             icon="ShoppingCart"
           />
           <MetricCard
-            title="Approved"
+            title="Одобрено"
             value="36"
             change="+1.3%"
             changeType="positive"
             icon="CheckCircle"
           />
           <MetricCard
-            title="Users"
+            title="Пользователи"
             value="4.890"
             change="+4.1%"
             changeType="positive"
             icon="Users"
           />
           <MetricCard
-            title="Subscriptions"
+            title="Подписки"
             value="1.201"
             change="-0.8%"
             changeType="negative"
@@ -89,14 +89,14 @@ const Index = () => {
         {/* Revenue and Financial Cards */}
         <div className="grid grid-cols-4 gap-6 mb-8">
           <MetricCard
-            title="Month total"
+            title="Месячный итог"
             value="25410"
             change="-0.5%"
             changeType="negative"
             icon="DollarSign"
           />
           <MetricCard
-            title="Revenue"
+            title="Выручка"
             value="1352"
             change="+3.2%"
             changeType="positive"
@@ -118,13 +118,13 @@ const Index = () => {
               </div>
             </div>
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-              Paid Invoices
+              Оплаченные счета
             </p>
             <p className="text-2xl font-bold text-gray-900 dark:text-white">
               $30256.23
             </p>
             <p className="text-xs text-gray-400 dark:text-gray-500">
-              Current Financial Year
+              Текущий финансовый год
             </p>
           </Card>
 
@@ -142,28 +142,28 @@ const Index = () => {
               </div>
             </div>
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-              Funds received
+              Полученные средства
             </p>
             <p className="text-2xl font-bold text-gray-900 dark:text-white">
               $150256.23
             </p>
             <p className="text-xs text-gray-400 dark:text-gray-500">
-              Current Financial Year
+              Текущий финансовый год
             </p>
           </Card>
         </div>
 
         {/* Charts Row */}
         <div className="grid grid-cols-2 gap-6 mb-8">
-          <ChartCard title="Sales dynamics" showYearSelector>
+          <ChartCard title="Динамика продаж" showYearSelector>
             <BarChart data={salesData} />
           </ChartCard>
 
           <div className="grid grid-cols-2 gap-4">
-            <ChartCard title="Users">
+            <ChartCard title="Пользователи">
               <PieChart data={usersData} />
             </ChartCard>
-            <ChartCard title="Subscriptions">
+            <ChartCard title="Подписки">
               <PieChart data={subscriptionsData} />
             </ChartCard>
           </div>
@@ -171,7 +171,7 @@ const Index = () => {
 
         {/* Bottom Row */}
         <div className="grid grid-cols-2 gap-6">
-          <ChartCard title="Overall User Activity" showYearSelector>
+          <ChartCard title="Общая активность пользователей" showYearSelector>
             <LineChart data={userActivityData} color="#9b87f5" />
           </ChartCard>
 
