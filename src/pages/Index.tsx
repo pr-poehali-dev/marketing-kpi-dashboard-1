@@ -51,14 +51,14 @@ const Index = () => {
   const isMobile = useIsMobile();
 
   return (
-    <div className="flex min-h-screen bg-gray-50 dark:bg-[#1A1F2C] transition-colors duration-200">
+    <div className="flex min-h-screen bg-gradient-to-br from-zinc-50 via-white to-zinc-100/50 dark:from-zinc-900 dark:via-zinc-800/90 dark:to-zinc-900/95 transition-colors duration-200">
       {!isMobile && <Sidebar />}
       <MobileSidebar
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
       />
 
-      <div className="flex-1 p-4 md:p-8">
+      <div className="flex-1 p-6 lg:p-8 bg-white/30 dark:bg-zinc-800/20 backdrop-blur-sm">
         {isMobile ? (
           <MobileHeader onMenuToggle={() => setIsMobileMenuOpen(true)} />
         ) : (

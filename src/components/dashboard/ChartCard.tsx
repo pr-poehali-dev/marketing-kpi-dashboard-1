@@ -23,17 +23,17 @@ const yearOptions = [
 
 const ChartCard = ({ title, children, showYearSelector }: ChartCardProps) => {
   return (
-    <Card className="bg-white dark:bg-[#2A3441] border-gray-200 dark:border-gray-700 p-4 md:p-6 transition-colors duration-200">
-      <div className="flex items-center justify-between mb-4 md:mb-6">
-        <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white">
+    <Card className="bg-white/70 dark:bg-zinc-800/60 border border-zinc-200/60 dark:border-zinc-700/50 p-6 md:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-zinc-900/10 dark:hover:shadow-black/25 backdrop-blur-xl rounded-2xl group">
+      <div className="flex items-center justify-between mb-6 md:mb-8">
+        <h3 className="text-lg md:text-xl font-bold text-zinc-800 dark:text-zinc-100 tracking-tight">
           {title}
         </h3>
         {showYearSelector && (
           <Select defaultValue="2025">
-            <SelectTrigger className="w-[70px] md:w-[80px] bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-900 dark:text-gray-300 text-xs md:text-sm">
+            <SelectTrigger className="w-[80px] md:w-[90px] bg-zinc-100/80 dark:bg-zinc-700/60 border border-zinc-200/60 dark:border-zinc-600/50 text-zinc-800 dark:text-zinc-200 text-sm md:text-base rounded-xl shadow-sm backdrop-blur-sm font-semibold">
               <SelectValue />
             </SelectTrigger>
-            <SelectContent className="bg-white dark:bg-[#2A3441] border-gray-200 dark:border-gray-600">
+            <SelectContent className="bg-white/95 dark:bg-zinc-800/95 border border-zinc-200/60 dark:border-zinc-600/50 rounded-xl backdrop-blur-xl shadow-xl">
               {yearOptions.map((option) => (
                 <SelectItem key={option.value} value={option.value}>
                   {option.label}
