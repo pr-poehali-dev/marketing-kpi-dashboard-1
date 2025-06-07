@@ -10,15 +10,15 @@ import {
 const Header = () => {
   return (
     <div className="flex items-center justify-between mb-8 transition-colors duration-200">
+      <div>
+        <h1 className="font-bold text-gray-900 dark:text-white text-2xl">
+          Marketing KPI Dashboard
+        </h1>
+        <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm">
+          Анализ ключевых показателей эффективности маркетинга
+        </p>
+      </div>
       <div className="flex items-center">
-        <div className="mr-6">
-          <h1 className="font-bold text-gray-900 dark:text-white text-2xl">
-            Marketing KPI Dashboard
-          </h1>
-          <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm">
-            Анализ ключевых показателей эффективности маркетинга
-          </p>
-        </div>
         <Select defaultValue="01.06.2023 - 31.06.2023">
           <SelectTrigger className="w-[200px] bg-white dark:bg-[#2A3441] border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-300">
             <SelectValue />
