@@ -29,7 +29,7 @@ const ChartCard = ({ title, children, showYearSelector }: ChartCardProps) => {
           {title}
         </h3>
         {showYearSelector && (
-          <Select defaultValue="2023">
+          <Select defaultValue="2025">
             <SelectTrigger className="w-[70px] md:w-[80px] bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-900 dark:text-gray-300 text-xs md:text-sm">
               <SelectValue />
             </SelectTrigger>
