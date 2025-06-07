@@ -209,41 +209,7 @@ const Index = () => {
           </ChartCard>
         </div>
 
-        {/* Эффективность и конверсии */}
-        <div className="grid grid-cols-2 gap-6">
-          <ChartCard title="Динамика лидов и конверсий" showYearSelector>
-            <LineChart
-              data={conversionData.map((item) => ({
-                month: item.month,
-                value: item.leads,
-                secondValue: item.conversions * 10, // scaled for visibility
-              }))}
-              color="#10B981"
-              showDualAxis
-            />
-          </ChartCard>
-
-          <div className="grid grid-cols-2 gap-4">
-            <MetricCard
-              title="Коэффициент конверсии"
-              value="17.0%"
-              change="+2.1%"
-              changeType="positive"
-              icon="Percent"
-              target="15.5%"
-              period="vs план"
-            />
-            <MetricCard
-              title="Lead-to-Customer Rate"
-              value="63.8%"
-              change="+4.3%"
-              changeType="positive"
-              icon="ArrowRight"
-              target="60%"
-              period="vs план"
-            />
-          </div>
-        </div>
+        {/* Удаляем секцию с динамикой лидов и лишними метриками */}
       </div>
     </div>
   );
