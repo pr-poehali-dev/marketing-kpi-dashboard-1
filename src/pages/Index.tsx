@@ -191,20 +191,7 @@ const Index = () => {
           </ChartCard>
         </div>
 
-        {/* Эффективность и конверсии */}
-        <div className="grid grid-cols-1 gap-6">
-          <ChartCard title="Динамика лидов и конверсий" showYearSelector>
-            <LineChart
-              data={conversionData.map((item) => ({
-                month: item.month,
-                value: item.leads,
-                secondValue: item.conversions * 10, // scaled for visibility
-              }))}
-              color="#10B981"
-              showDualAxis
-            />
-          </ChartCard>
-        </div>
+        {/* Эффективность и конверсии - удалено */}
       </div>
     </div>
   );
