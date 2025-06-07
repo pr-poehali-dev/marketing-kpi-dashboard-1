@@ -5,46 +5,42 @@ import ChartCard from "@/components/dashboard/ChartCard";
 import PieChart from "@/components/dashboard/PieChart";
 import BarChart from "@/components/dashboard/BarChart";
 import LineChart from "@/components/dashboard/LineChart";
-import OrdersTable from "@/components/dashboard/OrdersTable";
+import ConversionFunnel from "@/components/dashboard/ConversionFunnel";
 import Icon from "@/components/ui/icon";
-import { Card } from "@/components/ui/card";
 
 const Index = () => {
-  // Mock data for charts
-  const usersData = [
-    { name: "Desktop", value: 2890, color: "#FEF7CD" },
-    { name: "Mobile", value: 1500, color: "#FEC6A1" },
-    { name: "Tablet", value: 500, color: "#E5DEFF" },
+  // Mock data for marketing metrics
+  const channelTrafficData = [
+    { name: "Organic", value: 4500, color: "#10B981" },
+    { name: "Paid", value: 2800, color: "#3B82F6" },
+    { name: "Social", value: 1900, color: "#8B5CF6" },
+    { name: "Direct", value: 1200, color: "#F59E0B" },
+    { name: "Email", value: 800, color: "#EF4444" },
   ];
 
-  const subscriptionsData = [
-    { name: "Basic", value: 801, color: "#33C3F0" },
-    { name: "Pro", value: 300, color: "#0EA5E9" },
-    { name: "Enterprise", value: 100, color: "#1EAEDB" },
+  const conversionData = [
+    { month: "Jan", leads: 850, conversions: 127 },
+    { month: "Feb", leads: 920, conversions: 145 },
+    { month: "Mar", leads: 1100, conversions: 176 },
+    { month: "Apr", leads: 980, conversions: 152 },
+    { month: "May", leads: 1250, conversions: 200 },
+    { month: "Jun", leads: 1400, conversions: 238 },
   ];
 
-  const salesData = [
-    { month: "Jan", value: 400, secondValue: 200 },
-    { month: "Feb", value: 300, secondValue: 150 },
-    { month: "Mar", value: 600, secondValue: 400 },
-    { month: "Apr", value: 800, secondValue: 600 },
-    { month: "May", value: 500, secondValue: 300 },
-    { month: "Jun", value: 700, secondValue: 500 },
-    { month: "Jul", value: 900, secondValue: 700 },
-    { month: "Aug", value: 650, secondValue: 450 },
-    { month: "Sep", value: 800, secondValue: 600 },
-    { month: "Oct", value: 750, secondValue: 550 },
-    { month: "Nov", value: 900, secondValue: 700 },
-    { month: "Dec", value: 1000, secondValue: 800 },
+  const revenueData = [
+    { month: "Jan", revenue: 284000, target: 300000 },
+    { month: "Feb", revenue: 325000, target: 320000 },
+    { month: "Mar", revenue: 378000, target: 350000 },
+    { month: "Apr", revenue: 342000, target: 360000 },
+    { month: "May", revenue: 425000, target: 400000 },
+    { month: "Jun", revenue: 487000, target: 450000 },
   ];
 
-  const userActivityData = [
-    { month: "Jan", value: 400 },
-    { month: "Feb", value: 600 },
-    { month: "Mar", value: 800 },
-    { month: "Apr", value: 700 },
-    { month: "May", value: 900 },
-    { month: "Jun", value: 1200 },
+  const funnelData = [
+    { stage: "Визиты", value: 12500, color: "#3B82F6" },
+    { stage: "Лиды", value: 1400, color: "#10B981" },
+    { stage: "Квалифицированные", value: 840, color: "#F59E0B" },
+    { stage: "Конверсии", value: 238, color: "#EF4444" },
   ];
 
   return (
@@ -54,126 +50,181 @@ const Index = () => {
       <div className="flex-1 p-8">
         <Header />
 
-        {/* Metrics Row */}
-        <div className="grid grid-cols-4 gap-6 mb-8">
-          <MetricCard
-            title="Заказы"
-            value="201"
-            change="+2.5%"
-            changeType="positive"
-            icon="ShoppingCart"
-          />
-          <MetricCard
-            title="Одобрено"
-            value="36"
-            change="+1.3%"
-            changeType="positive"
-            icon="CheckCircle"
-          />
-          <MetricCard
-            title="Пользователи"
-            value="4.890"
-            change="+4.1%"
-            changeType="positive"
-            icon="Users"
-          />
-          <MetricCard
-            title="Подписки"
-            value="1.201"
-            change="-0.8%"
-            changeType="negative"
-            icon="CreditCard"
-          />
-        </div>
-
-        {/* Revenue and Financial Cards */}
-        <div className="grid grid-cols-4 gap-6 mb-8">
-          <MetricCard
-            title="Месячный итог"
-            value="25410"
-            change="-0.5%"
-            changeType="negative"
-            icon="DollarSign"
-          />
-          <MetricCard
-            title="Выручка"
-            value="1352"
-            change="+3.2%"
-            changeType="positive"
-            icon="TrendingUp"
-          />
-
-          {/* Financial Summary Cards */}
-          <Card className="bg-white dark:bg-[#2A3441] border-gray-200 dark:border-gray-700 p-6 transition-colors duration-200">
-            <div className="flex items-center justify-between mb-4">
-              <div className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg">
-                <Icon
-                  name="Receipt"
-                  size={20}
-                  className="text-gray-600 dark:text-gray-300"
-                />
-              </div>
-              <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
-                <Icon name="FileText" size={20} className="text-white" />
-              </div>
-            </div>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-              Оплаченные счета
-            </p>
-            <p className="text-2xl font-bold text-gray-900 dark:text-white">
-              30256.23₽
-            </p>
-            <p className="text-xs text-gray-400 dark:text-gray-500">
-              Текущий финансовый год
-            </p>
-          </Card>
-
-          <Card className="bg-white dark:bg-[#2A3441] border-gray-200 dark:border-gray-700 p-6 transition-colors duration-200">
-            <div className="flex items-center justify-between mb-4">
-              <div className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg">
-                <Icon
-                  name="Wallet"
-                  size={20}
-                  className="text-gray-600 dark:text-gray-300"
-                />
-              </div>
-              <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                <Icon name="DollarSign" size={20} className="text-white" />
-              </div>
-            </div>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-              Полученные средства
-            </p>
-            <p className="text-2xl font-bold text-gray-900 dark:text-white">
-              150257.23₽
-            </p>
-            <p className="text-xs text-gray-400 dark:text-gray-500">
-              Текущий финансовый год
-            </p>
-          </Card>
-        </div>
-
-        {/* Charts Row */}
-        <div className="grid grid-cols-2 gap-6 mb-8">
-          <ChartCard title="Динамика продаж" showYearSelector>
-            <BarChart data={salesData} />
-          </ChartCard>
-
-          <div className="grid grid-cols-2 gap-4">
-            <ChartCard title="Пользователи">
-              <PieChart data={usersData} />
-            </ChartCard>
-            <ChartCard title="Подписки">
-              <PieChart data={subscriptionsData} />
-            </ChartCard>
+        {/* Продажи и финансы */}
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            Продажи и финансы
+          </h2>
+          <div className="grid grid-cols-4 gap-6">
+            <MetricCard
+              title="Общий объем продаж"
+              value="2.1M"
+              change="+12.5%"
+              changeType="positive"
+              icon="TrendingUp"
+              target="2.3M"
+              period="vs план"
+            />
+            <MetricCard
+              title="Выручка"
+              value="487.2K"
+              change="+8.2%"
+              changeType="positive"
+              icon="DollarSign"
+              target="450K"
+              period="vs план"
+            />
+            <MetricCard
+              title="Маржинальная прибыль"
+              value="195K"
+              change="+15.1%"
+              changeType="positive"
+              icon="PieChart"
+              target="180K"
+              period="vs план"
+            />
+            <MetricCard
+              title="ROI/ROMI"
+              value="320%"
+              change="+5.8%"
+              changeType="positive"
+              icon="Target"
+              target="300%"
+              period="vs план"
+            />
           </div>
         </div>
 
-        {/* Bottom Row */}
-        <div className="grid grid-cols-1 gap-6">
-          <ChartCard title="Общая активность пользователей" showYearSelector>
-            <LineChart data={userActivityData} color="#9b87f5" />
+        {/* Лиды и конверсии */}
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            Лиды и конверсии
+          </h2>
+          <div className="grid grid-cols-4 gap-6">
+            <MetricCard
+              title="Общее количество лидов"
+              value="1,400"
+              change="+22.3%"
+              changeType="positive"
+              icon="Users"
+              target="1,200"
+              period="vs план"
+            />
+            <MetricCard
+              title="Общее количество конверсий"
+              value="238"
+              change="+18.7%"
+              changeType="positive"
+              icon="CheckCircle"
+              target="210"
+              period="vs план"
+            />
+            <MetricCard
+              title="Средняя стоимость лида (CPL)"
+              value="85₽"
+              change="-12.4%"
+              changeType="positive"
+              icon="Calculator"
+              target="97₽"
+              period="vs план"
+            />
+            <MetricCard
+              title="Средняя стоимость конверсии (CPA)"
+              value="500₽"
+              change="-8.1%"
+              changeType="positive"
+              icon="CreditCard"
+              target="543₽"
+              period="vs план"
+            />
+          </div>
+        </div>
+
+        {/* Трафик */}
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            Трафик и источники
+          </h2>
+          <div className="grid grid-cols-3 gap-6">
+            <MetricCard
+              title="Общее число визитов"
+              value="12,500"
+              change="+16.2%"
+              changeType="positive"
+              icon="MousePointer"
+              target="11,800"
+              period="vs план"
+            />
+            <MetricCard
+              title="Уникальные посетители"
+              value="8,750"
+              change="+19.8%"
+              changeType="positive"
+              icon="Eye"
+              target="8,200"
+              period="vs план"
+            />
+            <MetricCard
+              title="Новые посетители"
+              value="5,600"
+              change="+25.3%"
+              changeType="positive"
+              icon="UserPlus"
+              target="5,100"
+              period="vs план"
+            />
+          </div>
+        </div>
+
+        {/* Графики и аналитика */}
+        <div className="grid grid-cols-3 gap-6 mb-8">
+          <ChartCard title="Выручка vs План" showYearSelector>
+            <BarChart data={revenueData} />
           </ChartCard>
+
+          <ChartCard title="Источники трафика">
+            <PieChart data={channelTrafficData} />
+          </ChartCard>
+
+          <ChartCard title="Воронка конверсий">
+            <ConversionFunnel data={funnelData} />
+          </ChartCard>
+        </div>
+
+        {/* Эффективность и конверсии */}
+        <div className="grid grid-cols-2 gap-6">
+          <ChartCard title="Динамика лидов и конверсий" showYearSelector>
+            <LineChart
+              data={conversionData.map((item) => ({
+                month: item.month,
+                value: item.leads,
+                secondValue: item.conversions * 10, // scaled for visibility
+              }))}
+              color="#10B981"
+              showDualAxis
+            />
+          </ChartCard>
+
+          <div className="grid grid-cols-2 gap-4">
+            <MetricCard
+              title="Коэффициент конверсии"
+              value="17.0%"
+              change="+2.1%"
+              changeType="positive"
+              icon="Percent"
+              target="15.5%"
+              period="vs план"
+            />
+            <MetricCard
+              title="Lead-to-Customer Rate"
+              value="63.8%"
+              change="+4.3%"
+              changeType="positive"
+              icon="ArrowRight"
+              target="60%"
+              period="vs план"
+            />
+          </div>
         </div>
       </div>
     </div>

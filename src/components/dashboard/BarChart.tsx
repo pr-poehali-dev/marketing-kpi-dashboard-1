@@ -1,14 +1,18 @@
 interface BarChartProps {
   data: Array<{
     month: string;
-    value: number;
+    revenue?: number;
+    target?: number;
+    value?: number;
     secondValue?: number;
   }>;
 }
 
 const BarChart = ({ data }: BarChartProps) => {
   const maxValue = Math.max(
-    ...data.map((d) => Math.max(d.value, d.secondValue || 0)),
+    ...data.map((d) =>
+      Math.max(d.revenue || d.value || 0, d.target || d.secondValue || 0),
+    ),
   );
 
   return (
@@ -23,23 +27,37 @@ const BarChart = ({ data }: BarChartProps) => {
               <div
                 className="bg-blue-500 rounded-t-sm transition-all duration-300 hover:bg-blue-400"
                 style={{
-                  height: `${(item.value / maxValue) * 100}%`,
+                  height: `${((item.revenue || item.value || 0) / maxValue) * 100}%`,
                   width: "12px",
                 }}
+                title={`Факт: ${item.revenue || item.value || 0}`}
               />
-              {item.secondValue && (
+              {(item.target || item.secondValue) && (
                 <div
                   className="bg-purple-500 rounded-t-sm transition-all duration-300 hover:bg-purple-400"
                   style={{
-                    height: `${(item.secondValue / maxValue) * 100}%`,
+                    height: `${((item.target || item.secondValue || 0) / maxValue) * 100}%`,
                     width: "12px",
                   }}
+                  title={`План: ${item.target || item.secondValue || 0}`}
                 />
               )}
             </div>
             <span className="text-xs text-gray-400">{item.month}</span>
           </div>
         ))}
+      </div>
+
+      {/* Legend */}
+      <div className="flex justify-center space-x-4 mt-4">
+        <div className="flex items-center space-x-1">
+          <div className="w-3 h-3 bg-blue-500 rounded"></div>
+          <span className="text-xs text-gray-500">Факт</span>
+        </div>
+        <div className="flex items-center space-x-1">
+          <div className="w-3 h-3 bg-purple-500 rounded"></div>
+          <span className="text-xs text-gray-500">План</span>
+        </div>
       </div>
     </div>
   );
