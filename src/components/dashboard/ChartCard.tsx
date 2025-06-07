@@ -6,23 +6,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useState } from "react";
 
 interface ChartCardProps {
   title: string;
-  children: (selectedYear: string) => React.ReactNode;
+  children: React.ReactNode;
   showYearSelector?: boolean;
 }
 
 const yearOptions = [
+  { value: "2021", label: "2021" },
+  { value: "2022", label: "2022" },
   { value: "2023", label: "2023" },
   { value: "2024", label: "2024" },
   { value: "2025", label: "2025" },
 ];
 
 const ChartCard = ({ title, children, showYearSelector }: ChartCardProps) => {
-  const [selectedYear, setSelectedYear] = useState("2023");
-
   return (
     <Card className="bg-white dark:bg-[#2A3441] border-gray-200 dark:border-gray-700 p-6 transition-colors duration-200">
       <div className="flex items-center justify-between mb-6">
@@ -30,7 +29,7 @@ const ChartCard = ({ title, children, showYearSelector }: ChartCardProps) => {
           {title}
         </h3>
         {showYearSelector && (
-          <Select value={selectedYear} onValueChange={setSelectedYear}>
+          <Select defaultValue="2023">
             <SelectTrigger className="w-[80px] bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-900 dark:text-gray-300">
               <SelectValue />
             </SelectTrigger>
@@ -44,7 +43,7 @@ const ChartCard = ({ title, children, showYearSelector }: ChartCardProps) => {
           </Select>
         )}
       </div>
-      {children(selectedYear)}
+      {children}
     </Card>
   );
 };
