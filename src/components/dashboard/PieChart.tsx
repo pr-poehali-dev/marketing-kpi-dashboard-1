@@ -58,7 +58,7 @@ const PieChart = ({ data }: PieChartProps) => {
                     textAnchor="middle"
                     dominantBaseline="middle"
                     className="fill-white text-xs font-medium"
-                    style={{ fontSize: "3px" }}
+                    style={{ fontSize: "4.5px" }}
                   >
                     {percentage.toFixed(0)}%
                   </text>
