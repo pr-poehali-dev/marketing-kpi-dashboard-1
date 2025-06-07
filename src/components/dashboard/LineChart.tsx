@@ -48,35 +48,24 @@ const LineChart = ({
   }
 
   return (
-    <div style={{ width: "100%", height }}>
-      <ResponsiveContainer width="100%" height="100%">
-        <RechartsLineChart
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          {lines.map((line, index) => (
-            <Line
-              key={line.dataKey || index}
-              type="monotone"
-              dataKey={line.dataKey}
-              stroke={line.stroke}
-              name={line.name || line.dataKey}
-              strokeWidth={2}
-            />
-          ))}
-        </RechartsLineChart>
-      </ResponsiveContainer>
-    </div>
+    <ResponsiveContainer width="100%" height={height}>
+      <RechartsLineChart data={data}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        {lines.map((line, index) => (
+          <Line
+            key={index}
+            type="monotone"
+            dataKey={line.dataKey}
+            stroke={line.stroke}
+            name={line.name}
+          />
+        ))}
+      </RechartsLineChart>
+    </ResponsiveContainer>
   );
 };
 
