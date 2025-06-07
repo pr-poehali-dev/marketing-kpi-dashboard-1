@@ -29,12 +29,11 @@ const Sidebar = () => {
       {/* Logo */}
       <div className="mb-10">
         <div className="flex items-center space-x-3">
-          <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-xl shadow-lg shadow-indigo-500/25"></div>
           <h1 className="text-zinc-800 dark:text-zinc-100 font-bold text-xl tracking-tight">
             MKD
           </h1>
         </div>
-        <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-2 ml-11 font-medium">
+        <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-2 font-medium">
           Marketing Studio
         </p>
       </div>
