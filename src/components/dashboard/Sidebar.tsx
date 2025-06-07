@@ -25,7 +25,7 @@ const Sidebar = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="w-56 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 h-screen p-5 flex flex-col border-r border-slate-200 dark:border-slate-700">
+    <div className="w-56 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 min-h-screen p-5 flex flex-col border-r border-slate-200 dark:border-slate-700">
       {/* Logo */}
       <div className="mb-8">
         <h1 className="text-cyan-600 dark:text-cyan-400 font-bold text-xl tracking-wider">
