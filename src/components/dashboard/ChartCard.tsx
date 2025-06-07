@@ -13,6 +13,14 @@ interface ChartCardProps {
   showYearSelector?: boolean;
 }
 
+const yearOptions = [
+  { value: "2021", label: "2021" },
+  { value: "2022", label: "2022" },
+  { value: "2023", label: "2023" },
+  { value: "2024", label: "2024" },
+  { value: "2025", label: "2025" },
+];
+
 const ChartCard = ({ title, children, showYearSelector }: ChartCardProps) => {
   return (
     <Card className="bg-white dark:bg-[#2A3441] border-gray-200 dark:border-gray-700 p-6 transition-colors duration-200">
@@ -26,9 +34,11 @@ const ChartCard = ({ title, children, showYearSelector }: ChartCardProps) => {
               <SelectValue />
             </SelectTrigger>
             <SelectContent className="bg-white dark:bg-[#2A3441] border-gray-200 dark:border-gray-600">
-              <SelectItem value="2023">2023</SelectItem>
-              <SelectItem value="2022">2022</SelectItem>
-              <SelectItem value="2021">2021</SelectItem>
+              {yearOptions.map((option) => (
+                <SelectItem key={option.value} value={option.value}>
+                  {option.label}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
         )}
