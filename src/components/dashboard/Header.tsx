@@ -33,12 +33,6 @@ const Header = () => {
             <SelectItem value="01.06.2025 - 31.06.2025">
               01.06.2025 - 31.06.2025
             </SelectItem>
-            <SelectItem value="01.05.2023 - 31.05.2023">
-              01.05.2023 - 31.05.2023
-            </SelectItem>
-            <SelectItem value="01.04.2023 - 30.04.2023">
-              01.04.2023 - 30.04.2023
-            </SelectItem>
           </SelectContent>
         </Select>
         <Icon

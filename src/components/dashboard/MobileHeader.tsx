@@ -43,8 +43,6 @@ const MobileHeader = ({ onMenuToggle }: MobileHeaderProps) => {
             <SelectItem value="01.06.2023 - 31.06.2023">Июнь 2023</SelectItem>
             <SelectItem value="01.06.2024 - 31.06.2024">Июнь 2024</SelectItem>
             <SelectItem value="01.06.2025 - 31.06.2025">Июнь 2025</SelectItem>
-            <SelectItem value="01.05.2023 - 31.05.2023">Май 2023</SelectItem>
-            <SelectItem value="01.04.2023 - 30.04.2023">Апр 2023</SelectItem>
           </SelectContent>
         </Select>
         <Icon
